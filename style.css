@@ -1,0 +1,117 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.page {
+  scroll-snap-align: start;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.page1 { background: linear-gradient(to right, #ff9a9e, #fad0c4); }
+.page2 { background: linear-gradient(to right, #a1c4fd, #c2e9fb); }
+.page3 { background: linear-gradient(to right, #fbc2eb, #a6c1ee); }
+.page4 { background: linear-gradient(to right, #fccb90, #d57eeb); }
+.page5 { background: linear-gradient(to right, #ffecd2, #fcb69f); }
+.contact { background: #ffffff; }
+
+.content h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  animation: fadeInDown 1.5s ease;
+}
+
+.content p {
+  font-size: 1.3em;
+  animation: fadeInUp 2s ease;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  animation: fadeIn 2s ease;
+}
+
+input, textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+button {
+  padding: 12px;
+  background: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #e754a5;
+}
+
+/* Falling emojis */
+.falling-emoji {
+  position: fixed;
+  top: -50px;
+  z-index: 999;
+  animation: fall linear infinite;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(110vh); opacity: 0; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.wish-img {
+  max-width: 90%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+}
+
+.wish-img:hover {
+  transform: scale(1.03);
+}
